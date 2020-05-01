@@ -20,7 +20,7 @@ except Exception as err:
 URLS = []
 HOME = Path.home()
 # when user exits with Ctrl-C, don't show error msg and remove wget's temp files
-signal.signal(signal.SIGINT, lambda x, y: exit())
+signal.signal(signal.SIGINT, lambda x, y: clean_temp())
 
 
 def download(dist):
@@ -36,11 +36,15 @@ def download(dist):
         url = "https://mirrors.edge.kernel.org/linuxmint/stable/19.3/"
         regex = re.compile(".*cinnamon-64.*iso$")
     if dist == "windows":
+        file = Path(f"{HOME}/Downloads/{'windows_10_1909_BrazilianPortuguese_x64.iso'.lower()}")
+        if file.exists():
+            print("[!] ISO file already downloaded.")
+            return
         url = "https://software-download.microsoft.com/pr/Win10_1909_BrazilianPortuguese_x64.iso"
-        url += "?t=c9abb863-4234-4b32-963c-57566be76fd0&e=1588424173&h=d3243e963de0e217c066eb0e074cf24b"
-        wget.download(url, f"{HOME}/Win10_1909_BrazilianPortuguese_x64.iso")
+        url += "?t=c9abb863-4234-4b32-963c-57566be76fd0&e=1588424173&h=d3243e963de0e217c066eb0e074cf24bi"
+        wget.download(url, f"{HOME}/Downloads/{'windows_10_1909_BrazilianPortuguese_x64.iso'.lower()}")
         print()
-        print("Download ended.")
+        print("Download complete.")
         return
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -119,13 +123,34 @@ def create_usb(dist):
 
 def info():
     print("""
-            Supported distros at moment:
+            All systems and software are downloaded in x64 only... sorry.
+            Supported distros and software at moment:
             ubuntu    = Ubuntu 20.04 (LTS Always)
             fedora    = Fedora 32
             archlinux = Archlinux (latest)
             mint      = Mint Linux (19.3)
             windows   = Windows 10 (1909) [Yes... i have sense of humor]
             """)
+
+
+def clean_temp():
+    try:
+        temp_files = check_output(
+                    f"find {HOME}/Downloads -name *.tmp", shell=True, stderr=STDOUT
+                ).decode('utf-8').split('\n')[:-1]
+        if temp_files:
+            call(f"rm {HOME}/Downloads/*.tmp", shell=True)
+        exit()
+    except Exception as err:
+        print(f"[!] {err}: {dir} is not a valid directory!")
+        exit()
+
+    # if call(f"rm {HOME}/Downloads/*.tmp", shell=True):
+    #    print("error")
+    # if tmp_files:
+    #     call(f"rm {HOME}/Downloads/*tmp", shell=True)
+    # else:
+    #     print("there's no temp files on directory.")
 
 
 def main(argv):
