@@ -30,7 +30,7 @@ I hope this helps you.
 really.
 
 
-If you like or find any bug/erros/stupid loops/anything, fell free to contact, fork, purge...
+If you like or find any|more bugs/errors/stupid loops/anything, fell free to contact, fork, purge...
 
 
 
