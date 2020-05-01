@@ -7,7 +7,7 @@ python ulmaker <distro>
 ```
 
 ### If i made a mess...
-If no distro of unsupported distro is entered as an argument, a help message will be displayed.
+If no distro or unsupported distro is entered as an argument, a help message will be displayed.
 
 please... python 3, if the script won't run on your terminal, check your python version
 ```
