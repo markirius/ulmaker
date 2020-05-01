@@ -15,7 +15,9 @@ python --version
 ```
 
 ### Pleaseeeeeee... listen...
-If you don't trust on this script, disconnect all another usb (drives and key)... and run to the hills... no... but keep in mind... human errors occour, put only the drive you are going to use, don't blame me if you loss information.
+If you don't trust on this script, disconnect all another usb (drives and key)... and run to the hills... no... but keep in mind... human errors occur, put only the drive you are going to use ("there's a selector, but human mind sometimes is a S###... hold a breath... it's a fact"), don't blame me if you loss important information.
+
+Remember one more time, make a bootable usb, will erase all data on disk.
 
 ### No modules installed...
 simple... :)
@@ -26,6 +28,9 @@ pip install -r requirements.txt
 I hope this helps you.
 
 really.
+
+
+If you like or find any bug/erros/stupid loops/anything, fell free to contact, fork, purge...
 
 
 
