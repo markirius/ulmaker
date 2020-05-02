@@ -3,7 +3,7 @@
 ### How to ("comofas") it's a joke... ok
 Right... but... how i run this thing? ("comofas... yes again")
 ```
-python ulmaker <distro>
+python ulmaker.py <distro>
 ```
 
 ### If i made a mess...
@@ -15,9 +15,9 @@ python --version
 ```
 
 ### Pleaseeeeeee... listen...
-If you don't trust on this script (don't run or "X-cute" him), disconnect all another usb (drives and key)... and run to the hills... no... but keep in mind... human errors occur, put only the drive you are going to use ("there's a selector for drive/key, but human mind sometimes is a S###... taking a breath... it's a fact"), don't blame me if you loss important information, you have been warned.
+If you don't trust on this script (don't run or "X-cute" him), read the code, disconnect all another usb (drives and key)... and run to the hills... no... but keep in mind... human errors occur, put only the drive you are going to use ("there's a selector for drive/key, but human mind sometimes is a S###... taking a breath... it's a fact"), don't blame me if you loss important information, you have been warned.
 
-Remember one more time, make a bootable usb, *will erase* all data on disk.
+Remember one more time, make a bootable usb, **will erase** all data on disk.
 
 ### No modules installed...
 simple... :)
@@ -25,7 +25,7 @@ simple... :)
 pip install -r requirements.txt
 ```
 
-I hope this helps you.
+I hope this help you.
 
 really.
 
@@ -40,4 +40,4 @@ Micro$oft... this is not piracy of your software and i don't support this... the
 1. add more distros support.
 1. always get the latest versions of all distros, at moment only ubuntu and archlinux get the latest. (Automatically I mean)
 1. add option to keep or not iso file on system.
-1. may windows (cof... cof...) support... because i use *dd* system call do record iso on usb. (but in linux system, this software is copied to device, but maybe won't work as you wish on any motherboard booting)
+1. may windows (cof... cof...) support... because i use **dd** system call to record iso on usb device. (but in linux system, this software is copied to device, but maybe won't work as you wish on any motherboard booting)

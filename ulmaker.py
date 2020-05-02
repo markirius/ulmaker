@@ -145,13 +145,6 @@ def clean_temp():
         print(f"[!] {err}: {dir} is not a valid directory!")
         exit()
 
-    # if call(f"rm {HOME}/Downloads/*.tmp", shell=True):
-    #    print("error")
-    # if tmp_files:
-    #     call(f"rm {HOME}/Downloads/*tmp", shell=True)
-    # else:
-    #     print("there's no temp files on directory.")
-
 
 def main(argv):
     try:
