@@ -12,11 +12,6 @@ except Exception as err:
     sys.exit(f"[!] {err}, please use 'pip install -r requirements.txt'")
 
 
-try:
-    dist = sys.argv[1].lower()
-except Exception as err:
-    sys.exit(f"[!] No value has informed: {err}")
-
 URLS = []
 HOME = Path.home()
 # when user exits with Ctrl-C, don't show error msg and remove wget's temp files
@@ -35,17 +30,6 @@ def download(dist):
     if dist == "mint":
         url = "https://mirrors.edge.kernel.org/linuxmint/stable/19.3/"
         regex = re.compile(".*cinnamon-64.*iso$")
-    if dist == "windows":
-        file = Path(f"{HOME}/Downloads/{'windows_10_1909_BrazilianPortuguese_x64.iso'.lower()}")
-        if file.exists():
-            print("[!] ISO file already downloaded.")
-            return
-        url = "https://software-download.microsoft.com/pr/Win10_1909_BrazilianPortuguese_x64.iso"
-        url += "?t=c9abb863-4234-4b32-963c-57566be76fd0&e=1588424173&h=d3243e963de0e217c066eb0e074cf24bi"
-        wget.download(url, f"{HOME}/Downloads/{'windows_10_1909_BrazilianPortuguese_x64.iso'.lower()}")
-        print()
-        print("Download complete.")
-        return
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
     for link in soup.find_all("a", attrs={"href": regex}):
@@ -129,7 +113,6 @@ def info():
             fedora    = Fedora 32
             archlinux = Archlinux (latest)
             mint      = Mint Linux (19.3)
-            windows   = Windows 10 (1909) [Yes... i have sense of humor]
             """)
 
 
@@ -151,10 +134,13 @@ def main(argv):
         if argv:
             download(argv)
             create_usb(argv)
-    except Exception as err:
-        print(f"[!] {err}")
+    except Exception:
         info()
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    try:
+        dist = sys.argv[1].lower()
+        main(dist)
+    except Exception:
+        info()

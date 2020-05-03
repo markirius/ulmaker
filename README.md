@@ -1,4 +1,4 @@
-# usb linux maker aka ulmaker ver. (yes... i won't reconize windows, but exists)
+# usb linux maker aka ulmaker ver. (windows removed, but exists)
 
 ### How to ("comofas") it's a joke... ok
 Right... but... how i run this thing? ("comofas... yes again")
@@ -32,11 +32,13 @@ really.
 
 If you like or find any|more bugs/errors/stupid loops/anything, fell free to contact, fork, purge...
 
-Micro$oft... this is not piracy of your software and i don't support this... the script download an official iso from your repositories.
+
+02/05 - Removed windows downlads... a lot of problems with generate id key for download the file... until i not found another way to download from legally source without problems, the script will only support linux distros.
 
 
 # TODO:
 1. remove temp files if manual stop script under download isos. DONE!
+1. adjust some unecessary exception messages. DONE!
 1. add more distros support.
 1. always get the latest versions of all distros, at moment only ubuntu and archlinux get the latest. (Automatically I mean)
 1. add option to keep or not iso file on system.
