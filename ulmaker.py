@@ -26,7 +26,7 @@ def download(dist):
     if dist == "archlinux":
         url = "https://mirror.rackspace.com/archlinux/iso/latest/"
     if dist == "fedora":
-        url = "https://download.fedoraproject.org/pub/fedora/linux/releases/32/Workstation/x86_64/iso/"
+        url = "https://linuxmint.com/edition.php?id=274"
     if dist == "mint":
         url = "https://mirrors.edge.kernel.org/linuxmint/stable/19.3/"
         regex = re.compile(".*cinnamon-64.*iso$")
@@ -112,7 +112,7 @@ def info():
             ubuntu    = Ubuntu 20.04 (LTS Always)
             fedora    = Fedora 32
             archlinux = Archlinux (latest)
-            mint      = Mint Linux (19.3)
+            mint      = Mint Linux (latest)
             """)
 
 
