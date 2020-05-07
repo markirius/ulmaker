@@ -30,6 +30,9 @@ def download(dist):
     if dist == "mint":
         url = "https://mirrors.edge.kernel.org/linuxmint/stable/19.3/"
         regex = re.compile(".*cinnamon-64.*iso$")
+    if dist == "debian":
+        url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/"
+        regex = re.compile(".*DVD.1.*iso$")
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
     for link in soup.find_all("a", attrs={"href": regex}):
@@ -109,10 +112,12 @@ def info():
     print("""
             All systems and software are downloaded in x64 only... sorry.
             Supported distros and software at moment:
-            ubuntu    = Ubuntu 20.04 (LTS Always)
-            fedora    = Fedora 32
+
             archlinux = Archlinux (latest)
+            debian    = Debian Stable (latest)
+            fedora    = Fedora 32
             mint      = Mint Linux (19.3)
+            ubuntu    = Ubuntu 20.04 (LTS Always)
             """)
 
 
