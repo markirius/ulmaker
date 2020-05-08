@@ -33,6 +33,9 @@ def download(dist):
     if dist == "debian":
         url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/"
         regex = re.compile(".*DVD.1.*iso$")
+    if dist == "trisquel":
+        url = "http://jenkins.trisquel.info/makeiso/iso/"
+        regex = re.compile("^trisquel_\d\.\d\.\d_amd64.iso$")
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
     for link in soup.find_all("a", attrs={"href": regex}):
@@ -117,6 +120,7 @@ def info():
             debian    = Debian Stable (latest)
             fedora    = Fedora 32
             mint      = Mint Linux (19.3)
+            trisquel  = Trisquel (latest fully free)
             ubuntu    = Ubuntu 20.04 (LTS Always)
             """)
 

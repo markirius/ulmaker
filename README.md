@@ -42,5 +42,6 @@ If you like or find any|more bugs/errors/stupid loops/anything, fell free to con
 1. add more distros support.
 1. always get the latest versions of all distros, at moment only ubuntu and archlinux get the latest. (Automatically I mean)
   1. Debian lastest stable iso added.
+  1. Trisquel lastet added.
 1. add option to keep or not iso file on system.
 1. may windows (cof... cof...) support... because i use **dd** system call to record iso on usb device. (but in linux system, this software is copied to device, but maybe won't work as you wish on any motherboard booting)
